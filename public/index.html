@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <title>CommuterMap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='https://css.gg/css' rel='stylesheet'>
+  <link href='style.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<svg></svg>
+<div class="header">
+  <div class="logo" onclick="reset()">
+    CommuterMap
+  </div>
+  <div class="filters">
+    <span class="filter-box">
+      <label for="mapView">Map Filter: </label>
+      <select name="mapView" id="mapView" onchange="selectArea()">
+        <option value="all">ALL</option>
+        <option value="work">Work</option>
+        <option value="education">Education</option>
+      </select>
+    </span>
+    <br class="filter-break">
+    <span class="filter-box">
+      <label for="mapDirection">Direction: </label>
+      <select name="mapDirection" id="mapDirection" onchange="selectArea()">
+        <option value="total">TOTAL</option>
+        <option value="inbound">Inbound</option>
+        <option value="outbound">Outbound</option>
+      </select>
+    </span>
+  </div>
+</div>
+<div class="location">
+  <div class="location-icon">
+    <i class="gg-arrows-exchange-alt-v"></i>
+  </div>
+  <div class="location-boxes">
+    <div id="origin-box" class="location-box" onclick="changePointer('origin')">
+      <div>
+        <b><span id="originArea" style="color: white">Click on the map to select an area</span></b>
+      </div>
+    </div>
+
+    <div id="destination-box" class="location-box" onclick="changePointer('destination')">
+      <div>
+        <i><span id="destinationArea" style="color: white"></span></i>
+        <!-- <span style="color: #e9e9e9"></span> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="info-box">
+  <b><span id="origin"></span></b>&nbsp;&nbsp;<i class="gg-swap" style="display: inline-block; margin-bottom: 4px;"></i>&nbsp;&nbsp;<i><span id="destination"></span></i><hr>
+  Local: <span id="info-local"></span><br>
+  Inbound: <span id="info-inbound"></span><br>
+  Outbound: <span id="info-outbound"></span><br>
+  Net: <span id="info-net"></span><br>
+</div>
+<div id="view-chart-button" onclick="chartExpand()">
+  <i class="gg-maximize-alt" style="display: inline-block;"></i><span>&nbsp;&nbsp;Treemap</span>
+</div>
+<div id="close-chart-button" onclick="chartHide()">
+  <div style="display:flex;justify-content:center;align-items:center;">
+    <i class="gg-close"></i>
+  </div>
+</div>
+<div id="clear-button" onclick="resetOrigin()">
+  Clear
+</div>
+<div id="reset-button" onclick="reset()">
+  Reset
+</div>
+<div id="chart-container">
+  <div id="chart"></div>
+</div>
+<div class="color-bar">
+  <div style="margin: 2px 8px; font-weight: 600;">min</div><div id="min" style="margin: 2px 8px; font-weight: 600;"></div><div class="bar"></div><div id="max" style="margin: 2px 8px; font-weight: 600;"></div><div style="margin: 2px 8px; font-weight: 600;">max</div>
+</div>
+<div class="about">
+  <h1>CommuterMap</h1>
+</div>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="script.js"></script>
