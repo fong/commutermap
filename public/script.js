@@ -610,6 +610,11 @@ function createBreakdownChart() {
   }
 }
 
+window.addEventListener('resize', function() {
+  createBreakdownChart();
+});
+
+
 function createInfoCharts(){
 
   data = infoData.filter(d => {
@@ -674,12 +679,16 @@ function chartExpand() {
   document.getElementById("chart-container").style.display = "inline-block";
   document.getElementById("close-chart-button").style.display = "inline-block";
   document.getElementById("view-chart-button").style.display = "none";
+  document.getElementById("reset-button").style.display = "none";
+  document.getElementById("clear-button").style.display = "none";
 }
 
 function chartHide() {
   document.getElementById("chart-container").style.display = "none";
   document.getElementById("close-chart-button").style.display = "none";
   document.getElementById("view-chart-button").style.display = "inline-block";
+  document.getElementById("reset-button").style.display = "none";
+  document.getElementById("clear-button").style.display = "inline-block";
 }
 
 function chartNone() {
@@ -761,4 +770,12 @@ function dragged(d) {
 
 function dragended(d) {
   d3.select(this).attr("stroke", null);
+}
+
+function showAbout() {
+  document.getElementById("about").style.display = "inline-block"
+}
+
+function enter() {
+  document.getElementById("about").style.display = "none"
 }

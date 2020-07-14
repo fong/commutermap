@@ -2,15 +2,28 @@
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-.about {
+a {
+  color: white
+}
+
+a:hover {
+  color: rgb(168, 235, 255)
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+#about {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   position: fixed;
   top: 0;
   bottom: 0;
   z-index: 20000;
   background-color: #205281;
   color: white;
+  padding: 5%;
 }
 
 i {
@@ -284,7 +297,7 @@ rect.parent,
   margin: 8px;
   display: inline-block;
   font-size: 0.8em;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .color-bar > div {
@@ -311,7 +324,7 @@ rect.parent,
   /* overflow-x: scroll; */
   padding: 8px;
   margin: 8px;
-  z-index: 10000;
+  z-index: 2000;
   display: none;
   cursor: pointer;
 }
@@ -329,9 +342,19 @@ rect.parent,
   /* overflow-x: scroll; */
   padding: 8px;
   margin: 8px;
-  z-index: 10000;
+  z-index: 2000;
   display: none;
   cursor: pointer;
+}
+
+#enter-button {
+  text-align: right;
+  cursor: pointer;
+}
+
+#enter-button:hover{
+  background-color: rgb(255, 255, 255);
+  color: #205281;
 }
 
 @media only screen and (min-width: 768px) {
@@ -385,6 +408,14 @@ rect.parent,
   .info-box {
     margin: 0.5em;
   }
+
+  #reset-button {
+    border: 2px solid white;
+  }
+
+  #close-button {
+    border: 2px solid white;
+  }
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -427,6 +458,14 @@ rect.parent,
 
   #info-box {
     bottom: 8vh;
+  }
+
+  #reset-button {
+    border: 2px solid white !important;
+  }
+
+  #clear-button {
+    border: 2px solid white !important;
   }
 }
 

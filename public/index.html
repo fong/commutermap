@@ -7,10 +7,59 @@
   <link href='style.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+<div id="about">
+  <div style="overflow: auto; max-height: 100vh; width: 90%">
+    <h1>CommuterMap</h1>
+    <p style="font-size: 1.5em">Interactive Mapping Tool to visualise New Zealand commuting flows</p>
+    <hr>
+    <h3 id="enter-button" onclick="enter()">ENTER -></h3>
+    <hr>
+    <h3>About this tool</h3>
+    <p>CommuterMap is an interactive mapping tool to visualise the commuting flows obtained in the 2018 Census.</p>
+    <p>The commuting flows are displayed as a heatmap based on SA2 regions designated for the 2018 Census. <span style="color: #f1dd04">Yellow</span> 
+      regions indicates low travel volume, and <span style="color: #ff1500">Red</span> indicates high travel volume. <span style="color: #d8d8d8">Grey</span> 
+      areas on the map can signify no travel between the selected areas or an substantially low volume of travel. Commute flows below 6 is not disclosed for confidentiality 
+      purposes.</p>
+    <p>The map can be filtered to visualise the number of people commuting between areas of work and/or education. Local, inbound, outbound, and net commuting flows can also 
+      be filtered to visualise on the map.</p>
+    <p>A treemap is provided to enable proportional visualisation of the census data - which can be examined down to transportation modes used between different regions.</p>
+    <hr>
+    <h3>Data source</h3>
 
+    <p>The information used in the interactive tool is derived from the 2018 Census data about where people go to work or education, and the mode of transportation</p>
+    <p>The data from the 2018 Census has been modified for this tool in reduce size and improve performance. The integrity of the data has been maintained and can be obtained from the following links below:</p>
+    <b>SA2 New Zealand Regional Maps</b>
+        <ul>
+          <li><a href="/SA2.json">SA2 Region Map (TopoJSON) - High Res (Web)</a></li>
+          <li><a href="/SA2simple.json">SA2 Region Map (TopoJSON) - Okay-ish Res (Web)</a></li>
+          <li><a href="/SA2supersimple.json">SA2 Region Map (TopoJSON) - Low Res (Web)</a></li>
+        </ul>
+    <b>2018 Census Data</b>
+        <ul>
+          <li><a href="/SA2work_v2.csv">2018 Census Data - Work</a></li>
+          <li><a href="/SA2education_v2.csv">2018 Census Data - Education</a></li>
+          <li><a href="/SA2total_v3.csv">2018 Census Data - Work + Education Combined</a></li>
+        </ul>
+    <hr>
+    <h3>Future work/Known issues</h3>
+    <ul>
+      <li>Filter main map by transport modes</li>
+      <li>UI improvements</li>
+    </ul>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
 <svg></svg>
 <div class="header">
-  <div class="logo" onclick="reset()">
+  <div class="logo" onclick="showAbout()">
     CommuterMap
   </div>
   <div class="filters">
@@ -79,9 +128,7 @@
 <div class="color-bar">
   <div style="margin: 2px 8px; font-weight: 600;">min</div><div id="min" style="margin: 2px 8px; font-weight: 600;"></div><div class="bar"></div><div id="max" style="margin: 2px 8px; font-weight: 600;"></div><div style="margin: 2px 8px; font-weight: 600;">max</div>
 </div>
-<div class="about">
-  <h1>CommuterMap</h1>
-</div>
+
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="script.js"></script>
