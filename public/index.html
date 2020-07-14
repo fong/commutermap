@@ -10,6 +10,7 @@
 <div id="about">
   <div style="overflow: auto; max-height: 100vh; width: 90%">
     <h1>CommuterMap</h1>
+    <p>2020</p>
     <p style="font-size: 1.5em">Interactive Mapping Tool to visualise New Zealand commuting flows</p>
     <hr>
     <h3 id="enter-button" onclick="enter()">ENTER -></h3>
@@ -23,6 +24,18 @@
     <p>The map can be filtered to visualise the number of people commuting between areas of work and/or education. Local, inbound, outbound, and net commuting flows can also 
       be filtered to visualise on the map.</p>
     <p>A treemap is provided to enable proportional visualisation of the census data - which can be examined down to transportation modes used between different regions.</p>
+    <br>
+    <hr>
+    <h3>Modifications to <i>Commuter View (2013)</i></h3>
+    <ul>
+      <li>Changed from flow lines to heatmap to remove visual noise on high commute flow regions</li>
+      <li>Add new data for Education, and total flows (Education and Work) - education hotspots can now be visualised</li>
+      <li>Highlight Local flows (Stay at home, and work/education within same region as residence)</li>
+      <li>Remove tables and provide a treemap - improve visualisation of data based on proportionality of flow</li>
+      <li>Mobile and Tablet support (portrait and landscape)</li>
+    </ul>
+
+    <br>
     <hr>
     <h3>Data source</h3>
 
@@ -40,13 +53,28 @@
           <li><a href="/SA2education_v2.csv">2018 Census Data - Education</a></li>
           <li><a href="/SA2total_v3.csv">2018 Census Data - Work + Education Combined</a></li>
         </ul>
+    <br>
     <hr>
     <h3>Future work/Known issues</h3>
     <ul>
       <li>Filter main map by transport modes</li>
       <li>UI improvements</li>
     </ul>
-
+    <br>
+    <hr>
+    <h3>Built from:</h3>
+    <ul>
+      <li><a href="https://d3js.org/">d3.js</a> - map visualisation</li>
+      <li><a href="https://www.anaconda.com/">Anaconda/Python</a> - CSV and TopoJSON (merging and manipulation)</li>
+    </ul>
+    <br>
+    <hr>
+    <p>
+      <a href="https://github.com/fong/commutermap">github.com/fong/commutermap</a>
+    </p>
+    <p>
+      <a href="https://tofoo.co">me</a>
+    </p>
     <br>
     <br>
     <br>
@@ -106,6 +134,7 @@
   Local: <span id="info-local"></span><br>
   Inbound: <span id="info-inbound"></span><br>
   Outbound: <span id="info-outbound"></span><br>
+  <hr>
   Net: <span id="info-net"></span><br>
 </div>
 <div id="view-chart-button" onclick="chartExpand()">

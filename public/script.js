@@ -133,6 +133,8 @@ function ready(error, SA2) {
       d3.event.stopPropagation();
       document.getElementById('originArea').innerHTML = "Click on the map to select an area";
       document.getElementById('destinationArea').innerHTML = null;
+      document.getElementById("min").innerHTML = null;
+      document.getElementById("max").innerHTML = null;
       origin = null;
       chartNone()
       hideInfoCharts();
