@@ -3,6 +3,16 @@
   <title>CommuterMap</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128559664-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-128559664-2');
+  </script>
+
   <link href='https://css.gg/css' rel='stylesheet'>
   <link href='style.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -12,8 +22,10 @@
     <h1>CommuterMap</h1>
     <p>2020</p>
     <p style="font-size: 1.5em">Interactive Mapping Tool to visualise New Zealand commuting flows</p>
+    <p style="font-size: 0.8em"><b>Recommended Browsers:</b> Webkit-based (e.g. Chrome, Safari, Edge Chromium)</p>
+    <p style="font-size: 0.8em"><b>Compatible Browsers:</b> Firefox, Edge</p>
     <hr>
-    <h3 id="enter-button" onclick="enter()">ENTER -></h3>
+    <h3 id="enter-button" onclick="enterMap()">ENTER -></h3>
     <hr>
     <h3>About this tool</h3>
     <p>CommuterMap is an interactive mapping tool to visualise the commuting flows obtained in the 2018 Census.</p>
@@ -59,6 +71,7 @@
     <ul>
       <li>Filter main map by transport modes</li>
       <li>UI improvements</li>
+      <li>Odd blurring effect on Firefox</li>
     </ul>
     <br>
     <hr>
@@ -83,6 +96,12 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
   </div>
 </div>
 <svg></svg>

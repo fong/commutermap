@@ -39,7 +39,7 @@ i {
   left: 0;
   width: 100vw;
   height: 4em;
-  background-color: #205281ce;
+  background-color: rgba(32, 82, 129, 0.808);
   display: flex;
   z-index: 100;
 }
@@ -92,7 +92,7 @@ i {
   display: inline-block;
   font-weight: 400;
   z-index: 100;
-  background-color: #205281ce;
+  background-color: rgba(32, 82, 129, 0.808);
   color: white;
   min-height: 56px;
   padding: 0.5em;
@@ -283,7 +283,7 @@ rect.parent,
   height: auto;
   width: auto;
   color: white;
-  background-color: #205281ce;
+  background-color: rgba(32, 82, 129, 0.808);
   z-index: 10000;
   padding: 12px;
   display: none;

@@ -110,6 +110,14 @@ function ready(error, SA2) {
   svg.call(drag);
   reset()
 
+  window.addEventListener('resize', function() {
+    try {
+      createBreakdownChart();
+    } catch (e) {
+      console.log("no breakdown chart");
+    }
+  });
+
   function destinationPointer(d) {
     
     if (matchMedia('(pointer:fine)').matches) {
@@ -329,7 +337,7 @@ function selectArea(){
         })
         // console.log(t)
 
-        b.push({name: element.SA2_name_usual_residence_address, children: t})
+        b.push({name: element.SA2_name_educational_address || element.SA2_name_workplace_address || element.SA2_name_other_address, children: t})
       } else {
         // g.selectAll("#m" + (element.SA2_code_educational_address || element.SA2_code_workplace_address || element.SA2_code_other_address)).style('fill', 'hsl(' + (5+(1-(element.Total/max))*50) +',97%,48%')//.style('fill-opacity', element.Total/max)
 
@@ -345,7 +353,7 @@ function selectArea(){
         })
         // console.log(t)
 
-        c.push({name: element.SA2_name_educational_address || element.SA2_name_workplace_address || element.SA2_name_other_address, children: t})
+        c.push({name: element.SA2_name_usual_residence_address, children: t})
       }
     });
 
@@ -361,13 +369,13 @@ function selectArea(){
     }
     if (b) {
       chartArray.push({
-        name: "Inbound",
+        name: "Outbound",
         children: b
       })
     }
     if (c) {
       chartArray.push({
-        name: "Outbound",
+        name: "Inbound",
         children: c
       })
     }
@@ -612,11 +620,6 @@ function createBreakdownChart() {
   }
 }
 
-window.addEventListener('resize', function() {
-  createBreakdownChart();
-});
-
-
 function createInfoCharts(){
 
   data = infoData.filter(d => {
@@ -778,6 +781,6 @@ function showAbout() {
   document.getElementById("about").style.display = "inline-block"
 }
 
-function enter() {
+function enterMap() {
   document.getElementById("about").style.display = "none"
 }
